@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  
+  --ff-primary: "Roboto", sans-serif;
+  --background-color: #000000;
+  --text-color: #E1E1E6;
+  --fav-btn-color: #065E7C;
+  --table-head-bc-color: #092D38;
+  --table-darker-color: hsla(195, 61%, 6%, 0.5);
+  --table-lighter-color: #06181C;
+  --remove-btn-color: #F75A68;
+  --table-scrollbar-color: #4A808C;
+  --no-favorite-h1: #4E5455;
+
+}
+
+body {
+  font-size: 1.6rem;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+body * {
+  font-family: var(--ff-primary);
+}
+
+header button {
+  background-color: var(--fav-btn-color)
+}
+
+
+#app {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 11.5rem;
+  margin-bottom: 8.7rem;
+}
+
+#search {
+  display: flex;
+  gap: .8rem;
+}
+
+#search button {
+  position: relative;
+  width: 17rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: .8rem;
+  border: none;
+  text-transform: uppercase;
+  color: var(--text-color);
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding-left: 3.2rem;
+}
+
+#search button img{
+  position: absolute;
+  left: 3.2rem;
+}
+
+#search button:hover {
+  background-color: var(--text-color);
+  color: var(--fav-btn-color);
+}
+
+#search button img#blue-star {
+  opacity: 0;
+}
+
+#search button:hover img#blue-star {
+  opacity: 1;
+}
+
+#search button:hover img#white-star {
+  opacity: 0;
+}
+
+#search input {
+  width: 46.2rem;
+  height: 4.8rem;
+  border-radius: .8rem;
+  padding-left: 1.6rem;
+  background-color: var(--table-darker-color);
+  border: none;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+.table-container {
+  position: relative;
+  width: 100%;
+  max-height: 55rem; 
+  overflow-y: auto; 
+  border-radius: 1.2rem;
+  border: 2px solid var(--table-scrollbar-color)
+}
+
+.table-container::-webkit-scrollbar {
+  display: block;
+  width: .6rem;
+}
+
+table th {
+  position: sticky;
+  top: 0;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: var(--table-scrollbar-color);
+  border-radius: 1rem;
+  border: none;
+  width: 2rem;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.table-container::-webkit-scrollbar-track-piece:start {
+  background: transparent;
+  margin-top: 6rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-y: auto;
+  border-spacing: 0;
+}
+
+table * {
+  font-size: 2rem;
+  color: var(--text-color);
+}
+
+table th {
+  background: var(--table-head-bc-color);
+  text-align: left;
+  font-weight: 700;
+  padding: 1.6rem 1.6rem 1.6rem 4rem;
+}
+
+td.user {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+td.user img {
+  width: 5rem;
+  height: 5rem;
+  
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+td.user a p {
+  font-weight: 700;
+}
+
+td.user a span {
+  font-weight: 400;
+}
+
+table td {
+  padding: 1.6rem 1.6rem 1.6rem 4rem;
+}
+
+table tr:nth-child(odd) {
+  background-color: var(--table-darker-color);
+}
+
+table tr:nth-child(even) {
+  background-color: var(--table-lighter-color);
+}
+
+table button{
+  color: var(--remove-btn-color);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.no-user{
+  position: absolute;
+  top: 21rem;
+  left: 19.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+}
+
+.no-user h1{
+  font-size: 4rem;
+  line-height: 24.8px;
+  color: #4E5455;
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
+}
+
+.hide{
+  display: none;
+}
+
+.fixed-box {
+  position: relative;
+  height: 55rem;
+}
